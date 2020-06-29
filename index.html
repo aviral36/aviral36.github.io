@@ -26,21 +26,22 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link text-truncate" href="#">AnonyText</a>
+            <a class="nav-link text-truncate" href="#AnonyText">AnonyText</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">FlippyTiles</a>
+            <a class="nav-link" href="#FlippyTiles">FlippyTiles</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">HangMan</a>
+            <a class="nav-link" href="#Hangman">Hangman</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Me!</a>
+            <a class="nav-link" href="#Me">Me!</a>
         </li>
     </ul>
 </nav>
+<a id="AnonyText">
 <div class = "jumbotron container-fluid text-light bg-info py-5">
-    <h1 class="display-4">AnonyText</h1><br>
+    <h1 class="display-4">AnonyText</h1><br></a>
     <p class="lead"> Do you have something to say to me? Anonytext is a great tool to convey your message anonymously.
     There's a text box below, write anything you want, and send. You don't have to type in your name or any details, because that what makes you anonymous.
      </p>
@@ -77,8 +78,22 @@
     </div>
     If you know the functioning of internet, you understand that I can't possibly know who you are. Relax!
 </div>
+
+<a id="FlippyTiles"></a>
+<div class="jumbotron container-fluid text-white bg-success py-5">  
+        <h1 class = "display-4">FlippyTiles</h1></a><br>
+
+</div>
+
+<a id="Hangman"></a>
+<div class="jumbotron container-fluid text-white bg-danger py-5">  
+        <h1 class = "display-4">Hangman</h1></a><br>
+
+</div>
+
+<a id="Me">
 <div class = "jumbotron container-fluid text-light bg-secondary py-5">
-    <h1 class = "display-4">About Me</h1><br>
+    <h1 class = "display-4">About Me</h1></a><br>
     <p class = "lead"> I am an ever curious person. Having recently graduated from Delhi Technological University with an honors
         in Mathematics and Computing, I am all up to explore my new life! Thanks to the pandemic situation in 2020, I have sometime before
         I join my firm and I'm taking this time to learn new stuff so that in future, my kids don't feel that their dad knows nothing.<br>
@@ -87,15 +102,35 @@
     <p class='lead'>Given an alternate career, I'd choose archeology. I have always been interested in exploring our past
         and getting to learn about our history. I feel there are a lot of mysteries yet to be uncovered! <br>
         Ohh, and I love aeroplanes; and also trains.</p><br>
-    <p class = 'lead'>Here are a few things I have learnt making this webpage:
-        <ul>
-        <li>HTML, Bootstrap, CSS and JavaScript</li>
-        <li>Hosting a website on GitHub, and it's free!</li>
-        <li>Python's limitations while handling web scripts</li>
-        <li>Your parents think you're doing something illegal when you spend days on your laptop.</li>
-        </ul>
-    </p>
-</div>
+
+    <div class="row justify-content-between">
+        <div class="md-col-6 py-3">
+            <p class = 'lead'>Here are a few things I have learnt making this webpage:
+            <ul>
+            <li>HTML, Bootstrap, CSS and JavaScript</li>
+            <li>Hosting a website on GitHub, and it's free!</li>
+            <li>Python's limitations while handling web scripts</li>
+            <li>Your parents think you're doing something illegal when you spend days on your laptop.</li>
+            </ul>
+            </p>
+        </div>
+        <div class="md-col-3 px-3 pt-4">
+            <button onclick="location.href='https://www.github.com/aviral36'" type="button" class="btn btn-light btn-block">
+                Github | @aviral36</button><br>
+            <button onclick="location.href='https://www.facebook.com/aviralsharma8'" type="button" class="btn btn-primary btn-block">
+                    Facebook | Aviral Sharma</button><br>
+            <button onclick="location.href='https://www.quora.com/profile/Aviral-Sharma-33'" type="button" class="btn btn-danger btn-block">
+                    Quora | Aviral Sharma</button>
+        </div>
+        <div class="LI-profile-badge md-col-3 px-3 pt-3"  
+            data-version="v1" data-size="medium" 
+            data-locale="en_US" data-type="horizontal" 
+            data-theme="dark" data-vanity="aviralsharma1">
+            <a class="LI-simple-link" href='https://in.linkedin.com/in/aviralsharma1?trk=profile-badge'>
+                Aviral Sharma</a>
+        </div>
+    </div>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
 <script data-cfasync="false" type="text/javascript"
 src="AnonyText_script.js">
