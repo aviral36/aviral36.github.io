@@ -16,16 +16,16 @@
   </head>
 
 <body>
-    <div class="bg-white text-primary container-fluid pt-5 pb-4">
+    <div class="bg-white text-primary container-fluid pt-5 pb-4 login-window">
         <center>
         <h1 class = "display-4">QuickMaths</h1>
         <br>
         </center>
     </div>
     <center>
-    <p class = "lead">Solve as many problems you can in two minutes.</p> 
+    <p class = "lead login-window">Solve as many problems you can in two minutes.</p> 
     <br>
-    <div class = "jumbotron container-fluid text-dark bg-white py-4">
+    <div class = "jumbotron container-fluid text-dark bg-white py-4 login-window">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-secondary active">
           <input type="radio" name="mode" id="estimate" autocomplete="off" value="estimate" checked> Estimate
@@ -113,5 +113,42 @@
         </div>
       </div>
     </div>
-    <div id = "result">Result: </div>
+    <div class = "problem-page jumbotron container-fluid text-dark bg-white py-4" style="display:none">
+      <center>
+      <div id = "countdown"></div>
+      <p>num1 operator num2 </p>
+      <br>
+      <br>
+      <form class="needs-validation" novalidate>
+        <div class="form-row">
+            <label for="validationCustom05"></label>
+            <input id="answer" type="number" class="form-control" style = "width: 200px; margin: 0 auto;" id="validationCustom05" placeholder="answer" required>
+            <div class="invalid-feedback">
+              Please provide a numeric answer.
+            </div>
+        </div>
+        <br><br>
+        <button id = "next-btn" class="btn btn-primary" type="submit" onclick="nextQuestion()">Next</button>
+      </form>
+    </center>
+    </div>
 </body>
+
+<script>
+//JavaScript for disabling answer submissions if the input is invalid
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
