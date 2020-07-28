@@ -28,37 +28,37 @@
     <div class = "jumbotron container-fluid text-dark bg-white py-4">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-secondary active">
-          <input type="radio" name="options" id="estimate" autocomplete="off" checked> Estimate
+          <input type="radio" name="mode" id="estimate" autocomplete="off" value="estimate" checked> Estimate
         </label>
         <label class="btn btn-secondary">
-          <input type="radio" name="options" id="accurate" autocomplete="off"> Accurate
+          <input type="radio" name="mode" id="accurate" autocomplete="off" value="accurate"> Accurate
         </label>
       </div>
       <br><br>
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary active">
-              <input type="radio" name="options" id="addition" autocomplete="off" checked> + </label>
+              <input type="radio" name="category" id="addition" autocomplete="off" value = "add" checked> + </label>
             <label class="btn btn-secondary">
-              <input type="radio" name="options" id="subtraction" autocomplete="off"> - </label>
+              <input type="radio" name="category" id="subtraction" autocomplete="off" value = "subtract"> - </label>
             <label class="btn btn-secondary">
-              <input type="radio" name="options" id="multiplication" autocomplete="off"> x </label>
+              <input type="radio" name="category" id="multiplication" autocomplete="off" value = "multiply"> x </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="options" id="division" autocomplete="off"> ÷ </label>
+                <input type="radio" name="category" id="division" autocomplete="off" value = "divide"> ÷ </label>
       </div>
       <br><br>
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary active">
-              <input type="radio" name="options" id="Easy" autocomplete="off" checked> Easy
+              <input type="radio" name="difficulty" id="Easy" autocomplete="off" value = "easy" checked> Easy
             </label>
             <label class="btn btn-secondary">
-              <input type="radio" name="options" id="Medium" autocomplete="off"> Medium
+              <input type="radio" name="difficulty" id="Medium" autocomplete="off" value = "medium"> Medium
             </label>
             <label class="btn btn-secondary">
-              <input type="radio" name="options" id="Hard" autocomplete="off"> Hard
+              <input type="radio" name="difficulty" id="Hard" autocomplete="off" value = "hard"> Hard
             </label>
       </div>
       <br><br>
-      <button class = "btn btn-primary btn-block" type = "submit" style="width:50%;">Start</button>
+      <button class = "btn btn-primary btn-block" type = "submit" onclick = "startGame()" style="width:50%;">Start</button>
     <button class="btn btn-link btn-sm" data-toggle ="modal" data-target="#help" type="button" style = "float: right;">Help</button>
     </div>
   </center>
@@ -113,4 +113,5 @@
         </div>
       </div>
     </div>
+    <div id = "result">Result: </div>
 </body>
