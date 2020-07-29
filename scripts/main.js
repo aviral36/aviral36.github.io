@@ -227,7 +227,7 @@ function startGame() {
 
 
 /*timer*/
-var seconds = 10;
+var seconds = 120;
 function secondPassed() {
     var minutes = Math.round((seconds - 30)/60),
         remainingSeconds = seconds % 60;
