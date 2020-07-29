@@ -28,10 +28,10 @@
     <div class = "jumbotron container-fluid text-dark bg-white py-4 login-window">
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-secondary active">
-          <input type="radio" name="mode" id="estimate" autocomplete="off" value="estimate" checked> Estimate
+          <input type="radio" name="mode" id="accurate" autocomplete="off" value="accurate" checked> Accurate
         </label>
         <label class="btn btn-secondary">
-          <input type="radio" name="mode" id="accurate" autocomplete="off" value="accurate"> Accurate
+          <input type="radio" name="mode" id="estimate" autocomplete="off" value="estimate"> Estimate
         </label>
       </div>
       <br><br>
@@ -116,13 +116,15 @@
     </div>
     <div class = "problem-page jumbotron container-fluid text-dark bg-white py-4" style="display:none;">
       <center>
-      <div class = "lead" id = "countdown">2:00</div>
+      <div class = "lead text-danger" id = "countdown">2:00</div>
       <br>
-      <p class="lead problem-statement">num1 operator num2 </p>
+      <p class="h3 problem-statement">num1 operator num2 </p>
       <br>
       <input id="answer" type="number" style = "width: 200px; margin: 0 auto;" onkeypress="return searchKeyPress(event);">
       <br><br>
-      <button id = "next-btn" class="btn btn-primary" onclick="nextQuestion()">Next</button>
+      <button id = "next-btn" class="btn btn-outline-primary" style = "width: 200px" onclick="nextQuestion()">Next</button>
+      <br><br>
+      <p> You can also press "Enter" to go to next question.</p>
       </center>
     </div>
 
@@ -154,7 +156,12 @@
       </table>
       <br>
       <br>
-      <button id = "home" class="btn btn-primary" type="button" onclick="location.href='https://aviral36.github.io/quickmaths'">Home</button>
+      <button id = "home" class="btn btn-outline-primary" type="button" style="width:50%;" onclick="location.href='https://aviral36.github.io/quickmaths'">Home</button>
+      <br>
+      <hr>
+      <p>Developed by Aviral Sharma</p>
+      <button id = "linkedin" class="btn btn-sm btn-outline-info" type="button" style="width:95px;" onclick="location.href='https://www.linkedin.com/in/aviralsharma1/'">LinkedIn</button>
+      <button id = "github" class="btn btn-sm btn-outline-secondary" type="button" style="width:95px;" onclick="location.href='https://www.github.com/aviral36'">GitHub</button>
     </center>
     </div>
 </body>
