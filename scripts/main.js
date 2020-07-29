@@ -184,7 +184,6 @@ function startGame() {
                 var uplimit = temp*1.1;
                 answer = [lowlimit, uplimit];
             }
-            alert(answer);
         } else if (category == "subtract"){
             var num1 = rand(hard_as_min, hard_as_max);
             var num2 = rand(hard_as_min, hard_as_max);
