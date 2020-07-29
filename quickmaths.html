@@ -113,42 +113,47 @@
         </div>
       </div>
     </div>
-    <div class = "problem-page jumbotron container-fluid text-dark bg-white py-4" style="display:none">
+    <div class = "problem-page jumbotron container-fluid text-dark bg-white py-4" style="display:none;">
       <center>
-      <div id = "countdown"></div>
-      <p>num1 operator num2 </p>
+      <div class = "lead" id = "countdown">2:00</div>
+      <br>
+      <p class="lead problem-statement">num1 operator num2 </p>
+      <br>
+      <input id="answer" type="number" style = "width: 200px; margin: 0 auto;" onkeypress="return searchKeyPress(event);">
+      <br><br>
+      <button id = "next-btn" class="btn btn-primary" onclick="nextQuestion()">Next</button>
+      </center>
+    </div>
+
+    <div class = "result-page jumbotron container-fluid text-dark bg-white pt-1 pb-4" style="display:none">
+      <center>
+      <p class = "display-4">Result</p>
+      <br>
+      <table id = "result_table" class="table table-hover" style="width:90%">
+        <tr>
+          <th>Score</th>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>Attempted</th>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>Correct</th>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>Incorrect</th>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>Accuracy</th>
+          <td>0%</td>
+        </tr>
+      </table>
       <br>
       <br>
-      <form class="needs-validation" novalidate>
-        <div class="form-row">
-            <label for="validationCustom05"></label>
-            <input id="answer" type="number" class="form-control" style = "width: 200px; margin: 0 auto;" id="validationCustom05" placeholder="answer" required>
-            <div class="invalid-feedback">
-              Please provide a numeric answer.
-            </div>
-        </div>
-        <br><br>
-        <button id = "next-btn" class="btn btn-primary" type="submit" onclick="nextQuestion()">Next</button>
-      </form>
+      <button id = "home" class="btn btn-primary" type="button" onclick="location.href='https://aviral36.github.io/quickmaths'">Home</button>
     </center>
     </div>
 </body>
-
-<script>
-//JavaScript for disabling answer submissions if the input is invalid
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    var forms = document.getElementsByClassName('needs-validation');
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-</script>
