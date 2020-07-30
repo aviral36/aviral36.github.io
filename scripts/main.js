@@ -303,10 +303,8 @@ function nextQuestion() {
         if(typeof answer == 'number'){
             if(Math.floor(user_answer) == Math.floor(answer)){
                 right_answers++;
-                alert("yes");
             }
             else{
-                alert("no");
                 wrong_answers++;
             }
         }
@@ -321,7 +319,7 @@ function nextQuestion() {
     }
 
     // commands to replace num1 and num2 with numbers
-    if(difficulty == "easy"){
+    if(difficulty == "easy"){t
         if(category == "add"){
             var num1 = rand(easy_as_min, easy_as_max);
             var num2 = rand(easy_as_min, easy_as_max);
