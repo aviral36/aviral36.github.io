@@ -319,7 +319,7 @@ function nextQuestion() {
     }
 
     // commands to replace num1 and num2 with numbers
-    if(difficulty == "easy"){t
+    if(difficulty == "easy"){
         if(category == "add"){
             var num1 = rand(easy_as_min, easy_as_max);
             var num2 = rand(easy_as_min, easy_as_max);
