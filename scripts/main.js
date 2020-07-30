@@ -22,6 +22,8 @@ var easy_multiply_min = 2;
 var easy_multiply_max = 20;
 var easy_divide_min = 2;
 var easy_divide_max = 50;
+var easy_percent_min = 50;
+var easy_percent_max = 200;
 
 var medium_as_min = 100;
 var medium_as_max = 10000;
@@ -29,6 +31,8 @@ var medium_multiply_min = 15;
 var medium_multiply_max = 100;
 var medium_divide_min = 100;
 var medium_divide_max = 10000;
+var medium_percent_min = 100;
+var medium_percent_max = 2000;
 
 var hard_as_min = 10000;
 var hard_as_max = 1000000;
@@ -36,6 +40,11 @@ var hard_multiply_min = 50;
 var hard_multiply_max = 1000;
 var hard_divide_min = 1000;
 var hard_divide_max = 100000;
+var hard_percent_min = 100;
+var hard_percent_max = 1000;
+
+var easy_percent = [10,20,30,40,50,60,70,80,90];
+var medium_percent = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95];
 
 //random number generator
 function rand(min, max) {
@@ -78,6 +87,19 @@ function startGame() {
                 answer = num1+num2;
             }else{
                 var temp = num1+num2;
+                var lowlimit = temp*0.9;
+                var uplimit = temp*1.1;
+                answer = [lowlimit, uplimit];
+            }
+        }else if(category == "percent"){
+            var num1 = rand(easy_percent_min, easy_percent_max);
+            var t2 = rand(0,8);
+            var num2 = easy_percent[t2];
+            document.getElementsByClassName('problem-statement')[0].innerHTML = num2 + "% of " + num1;
+            if(mode == "accurate"){
+                answer = (num1*num2)/100;
+            }else{
+                var temp = (num1*num2)/100;
                 var lowlimit = temp*0.9;
                 var uplimit = temp*1.1;
                 answer = [lowlimit, uplimit];
@@ -133,7 +155,20 @@ function startGame() {
                 var uplimit = temp*1.1;
                 answer = [lowlimit, uplimit];
             }
-        } else if (category == "subtract"){
+        } else if(category == "percent"){
+            var num1 = rand(medium_percent_min, medium_percent_max);
+            var t2 = rand(0,18);
+            var num2 = medium_percent[t2];
+            document.getElementsByClassName('problem-statement')[0].innerHTML = num2 + "% of " + num1;
+            if(mode == "accurate"){
+                answer = (num1*num2)/100;
+            }else{
+                var temp = (num1*num2)/100;
+                var lowlimit = temp*0.9;
+                var uplimit = temp*1.1;
+                answer = [lowlimit, uplimit];
+            }
+        }else if (category == "subtract"){
             var num1 = rand(medium_as_min, medium_as_max);
             var num2 = rand(medium_as_min, medium_as_max);
             document.getElementsByClassName('problem-statement')[0].innerHTML = num1 + " - " + num2;
@@ -184,7 +219,19 @@ function startGame() {
                 var uplimit = temp*1.1;
                 answer = [lowlimit, uplimit];
             }
-        } else if (category == "subtract"){
+        } else if(category == "percent"){
+            var num1 = rand(hard_percent_min, hard_percent_max);
+            var num2 = rand(1,100);
+            document.getElementsByClassName('problem-statement')[0].innerHTML = num2 + "% of " + num1;
+            if(mode == "accurate"){
+                answer = (num1*num2)/100;
+            }else{
+                var temp = (num1*num2)/100;
+                var lowlimit = temp*0.9;
+                var uplimit = temp*1.1;
+                answer = [lowlimit, uplimit];
+            }
+        }else if (category == "subtract"){
             var num1 = rand(hard_as_min, hard_as_max);
             var num2 = rand(hard_as_min, hard_as_max);
             document.getElementsByClassName('problem-statement')[0].innerHTML = num1 + " - " + num2;
@@ -254,10 +301,12 @@ function nextQuestion() {
     }
     else{
         if(typeof answer == 'number'){
-            if(user_answer == answer){
+            if(Math.floor(user_answer) == Math.floor(answer)){
                 right_answers++;
+                alert("yes");
             }
             else{
+                alert("no");
                 wrong_answers++;
             }
         }
@@ -281,6 +330,19 @@ function nextQuestion() {
                 answer = num1+num2;
             }else{
                 var temp = num1+num2;
+                var lowlimit = temp*0.9;
+                var uplimit = temp*1.1;
+                answer = [lowlimit, uplimit];
+            }
+        } else if(category == "percent"){
+            var num1 = rand(easy_percent_min, easy_percent_max);
+            var t2 = rand(0,8);
+            var num2 = easy_percent[t2];
+            document.getElementsByClassName('problem-statement')[0].innerHTML = num2 + "% of " + num1;
+            if(mode == "accurate"){
+                answer = (num1*num2)/100;
+            }else{
+                var temp = (num1*num2)/100;
                 var lowlimit = temp*0.9;
                 var uplimit = temp*1.1;
                 answer = [lowlimit, uplimit];
@@ -336,6 +398,19 @@ function nextQuestion() {
                 var uplimit = temp*1.1;
                 answer = [lowlimit, uplimit];
             }
+        } else if(category == "percent"){
+            var num1 = rand(medium_percent_min, medium_percent_max);
+            var t2 = rand(0,18);
+            var num2 = medium_percent[t2];
+            document.getElementsByClassName('problem-statement')[0].innerHTML = num2 + "% of " + num1;
+            if(mode == "accurate"){
+                answer = (num1*num2)/100;
+            }else{
+                var temp = (num1*num2)/100;
+                var lowlimit = temp*0.9;
+                var uplimit = temp*1.1;
+                answer = [lowlimit, uplimit];
+            }
         } else if (category == "subtract"){
             var num1 = rand(medium_as_min, medium_as_max);
             var num2 = rand(medium_as_min, medium_as_max);
@@ -383,6 +458,18 @@ function nextQuestion() {
                 answer = num1+num2;
             }else{
                 var temp = num1+num2;
+                var lowlimit = temp*0.9;
+                var uplimit = temp*1.1;
+                answer = [lowlimit, uplimit];
+            }
+        } else if(category == "percent"){
+            var num1 = rand(hard_percent_min, hard_percent_max);
+            var num2 = rand(1,100);
+            document.getElementsByClassName('problem-statement')[0].innerHTML = num2 + "% of " + num1;
+            if(mode == "accurate"){
+                answer = (num1*num2)/100;
+            }else{
+                var temp = (num1*num2)/100;
                 var lowlimit = temp*0.9;
                 var uplimit = temp*1.1;
                 answer = [lowlimit, uplimit];
