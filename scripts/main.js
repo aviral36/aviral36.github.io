@@ -517,11 +517,12 @@ function endQuiz() {
     document.getElementsByClassName('login-window')[1].style.display = 'none';
     document.getElementsByClassName('login-window')[2].style.display = 'none';
     document.getElementsByClassName('problem-page')[0].style.display = 'none';
-    document.getElementsByClassName('result-page')[0].style.display = 'block';
+    document.getElementsByClassName('result-page')[0].style.display = 'block'; 
 
     var score = right_answers*3 - wrong_answers;
     var attempted = right_answers + wrong_answers;
-    var accuracy = (right_answers/attempted)*100;
+    var a_ = (right_answers/attempted)*100;
+    var accuracy = Math.round(a_ * 100)/100;
     //update score
     document.getElementById('result_table').rows[0].cells[1].innerHTML = score;
     //update attempted
@@ -533,16 +534,6 @@ function endQuiz() {
     //update accuracy
     document.getElementById('result_table').rows[4].cells[1].innerHTML = accuracy + "%";
 }
-
-/*document.getElementById("answer")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        alert("pressed enter");
-        //document.getElementById("next-btn").click();
-    }
-});
-*/
 
 function searchKeyPress(e)
 {
